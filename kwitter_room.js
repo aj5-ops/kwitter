@@ -1,4 +1,20 @@
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAZ0jF_VgGRNo18iq16mD5aRqpT22QAgec",
+  authDomain: "kwitter-14c7b.firebaseapp.com",
+  databaseURL: "https://kwitter-14c7b-default-rtdb.firebaseio.com",
+  projectId: "kwitter-14c7b",
+  storageBucket: "kwitter-14c7b.appspot.com",
+  messagingSenderId: "562150437481",
+  appId: "1:562150437481:web:af9a03a26b33027dfd68f8"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 //ADD YOUR FIREBASE LINKS HERE
 const firebaseConfig = {
       apiKey: "AIzaSyAZ0jF_VgGRNo18iq16mD5aRqpT22QAgec",
@@ -35,4 +51,9 @@ function redirectToRoomName(name){
       console.log(name);
       localStorage.setItem("room_name",name);
       window.location="kwitter_page.html";
+}
+function logout(){
+      localStorage.removeItem("user_name");
+      localStorage.removeItem("room_name");
+      window.location="kwitter.html";
 }
